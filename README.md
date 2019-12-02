@@ -9,17 +9,25 @@ This guide uses a single Ansible playbook, which is completely automated and can
 
 --------------------
 1.Prerequisites
+
 2.Support Level
 --------------------
 
 Prerequisites
+--------------------------------------------------------------------------------------------------------------------------------------------
 
 sudo apt-get install -y python-pip libssl-dev
+
 sudo pip install cs
+
 sudo pip install sshpubkeys
+
 sudo apt-get install software-properties-common
+
 sudo apt-add-repository ppa:ansible/ansible
+
 sudo apt-get update
+
 sudo apt-get install ansible
 
 On CloudStack server you also have to install libselinux-python :
