@@ -16,30 +16,32 @@ This guide uses a single Ansible playbook, which is completely automated and can
 Prerequisites
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-sudo apt-get install -y python-pip libssl-dev
+  sudo apt-get install -y python-pip libssl-dev
 
-sudo pip install cs
+  sudo pip install cs
 
-sudo pip install sshpubkeys
+  sudo pip install sshpubkeys
 
-sudo apt-get install software-properties-common
+  sudo apt-get install software-properties-common
 
-sudo apt-add-repository ppa:ansible/ansible
+  sudo apt-add-repository ppa:ansible/ansible
 
-sudo apt-get update
+  sudo apt-get update
 
-sudo apt-get install ansible
+  sudo apt-get install ansible
 
-On CloudStack server you also have to install libselinux-python :
+  On CloudStack server you also have to install libselinux-python :
 
-yum install libselinux-python
-cs is a python module for the CloudStack API.
+  yum install libselinux-python
+
+  cs is a python module for the CloudStack API.
 
 Set your CloudStack endpoint, API keys and HTTP method used.
 
 You can define them as environment variables: CLOUDSTACK_ENDPOINT, CLOUDSTACK_KEY, CLOUDSTACK_SECRET and CLOUDSTACK_METHOD.
 
 Or create a ~/.cloudstack.ini file:
+
 
 [cloudstack]
 endpoint = <your cloudstack api endpoint>
