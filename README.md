@@ -35,16 +35,16 @@ Prerequisites
   yum install libselinux-python
 
   cs is a python module for the CloudStack API.
-
+--------------------------------------------------------------------------------------------------------------------------------------------
 Set your CloudStack endpoint, API keys and HTTP method used.
 
 You can define them as environment variables: CLOUDSTACK_ENDPOINT, CLOUDSTACK_KEY, CLOUDSTACK_SECRET and CLOUDSTACK_METHOD.
-
+--------------------------------------------------------------------------------------------------------------------------------------------
 Or create a ~/.cloudstack.ini file:
-
+-------------------------------------
 
 [cloudstack]
- 
+ ----------------
  endpoint = <your cloudstack api endpoint>
  
  key = <your api access key>
@@ -67,15 +67,23 @@ Clone the playbook
  ansible-playbook k8s.yml
 
 Some variables can be edited in the k8s.yml file.
-
+--------------------------------------------------
  vars:
+ -----
    ssh_key: k8s
+   ---------------------------------------
    k8s_num_nodes: 2
+   ---------------------------------------
    k8s_security_group_name: k8s
+   ---------------------------------------
    k8s_node_prefix: k8s2
+   ---------------------------------------
    k8s_template: <templatename>
+  -----------------------------------------
    k8s_instance_type: <serviceofferingname>
-
+  ------------------------------------------
+  
+-------------------------------------------------------------------------------------------------------------------------------------------
 This will start a Kubernetes master node and a number of compute nodes (by default 2). The instance_type and template are specific, edit them to specify your CloudStack cloud specific template and instance type (i.e. service offering).
 
 Check the tasks and templates in roles/k8s if you want to modify anything.
@@ -83,10 +91,11 @@ Check the tasks and templates in roles/k8s if you want to modify anything.
 Once the playbook as finished, it will print out the IP of the Kubernetes master:
 
 TASK: [k8s | debug msg='k8s master IP is {{ k8s_master.default_ip }}'] ********
+---------------------------------------------------------------------------------
 SSH to it using the key that was created and using the core user.
 
 ssh -i ~/.ssh/id_rsa_k8s core@<master IP>
-
+----------------------------------------------------------------------------------
 And you can list the machines in your cluster:
 
 fleetctl list-machines
